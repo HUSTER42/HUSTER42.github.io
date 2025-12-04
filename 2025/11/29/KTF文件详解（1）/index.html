@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/project/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/project/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/project/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/project/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/project/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huster42.github.io","root":"/project/","images":"/project/images","scheme":"Gemini","darkmode":false,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/project/js/config.js" defer></script>
+
+    <meta name="description" content="ktransformers-main&#x2F;├── 📄 配置文件│   ├── README.md &#x2F; README_ZH.md           # 项目说明文档│   ├── LICENSE                           			# 开源许可证│   ├── pyproject.toml                    			# Python 项目配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KTF文件详解（1）">
+<meta property="og:url" content="http://huster42.github.io/project/2025/11/29/KTF%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3%EF%BC%881%EF%BC%89/index.html">
+<meta property="og:site_name" content="HUSTER42&#39;s BLOG">
+<meta property="og:description" content="ktransformers-main&#x2F;├── 📄 配置文件│   ├── README.md &#x2F; README_ZH.md           # 项目说明文档│   ├── LICENSE                           			# 开源许可证│   ├── pyproject.toml                    			# Python 项目配">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pica.zhimg.com/v2-6cf9ff67d03279f251daa30c110a3306_1440w.jpg">
+<meta property="article:published_time" content="2025-11-29T12:58:38.000Z">
+<meta property="article:modified_time" content="2025-11-29T13:22:30.625Z">
+<meta property="article:author" content="HUSTER42">
+<meta property="article:tag" content="NUMA">
+<meta property="article:tag" content="高性能算子">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pica.zhimg.com/v2-6cf9ff67d03279f251daa30c110a3306_1440w.jpg">
+
+
+<link rel="canonical" href="http://huster42.github.io/project/2025/11/29/KTF%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3%EF%BC%881%EF%BC%89/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://huster42.github.io/project/2025/11/29/KTF%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3%EF%BC%881%EF%BC%89/","path":"2025/11/29/KTF文件详解（1）/","title":"KTF文件详解（1）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>KTF文件详解（1） | HUSTER42's BLOG</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/project/js/utils.js" defer></script><script src="/project/js/motion.js" defer></script><script src="/project/js/sidebar.js" defer></script><script src="/project/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+  <script src="/project/js/third-party/pace.js" defer></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/project/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/project/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/project/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">HUSTER42's BLOG</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/project/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/project/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/project/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0-%E4%B8%89%E7%A7%8D%E5%88%9D%E5%A7%8B%E5%8C%96%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">构造函数 - 三种初始化模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">基础线程池模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NUMA-%E6%84%9F%E7%9F%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">NUMA 感知模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">高级配置模式</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E5%89%8D%E8%BD%AC%E6%8D%A2FP16%E4%B8%BAFP32"><span class="nav-number">2.</span> <span class="nav-text">提前转换FP16为FP32</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU%E7%AD%89%E5%BE%85GPU%E7%BB%93%E6%9D%9F%E5%90%8E%E6%89%A7%E8%A1%8C"><span class="nav-number">3.</span> <span class="nav-text">CPU等待GPU结束后执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%87%BD%E6%95%B0%EF%BC%8C%E7%AD%89%E5%BE%85%E9%98%9F%E5%88%97%E5%86%85%E6%89%80%E6%9C%89%E4%BB%BB%E5%8A%A1%E5%AE%8C%E6%88%90"><span class="nav-number">4.</span> <span class="nav-text">同步函数，等待队列内所有任务完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98%E7%BC%93%E5%AD%98%E5%8C%BA%E7%AE%A1%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">共享内存缓存区管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C"><span class="nav-number">6.</span> <span class="nav-text">原子操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E7%AA%83%E5%8F%96"><span class="nav-number">7.</span> <span class="nav-text">工作窃取</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="HUSTER42"
+      src="/project/images/science.jpeg">
+  <p class="site-author-name" itemprop="name">HUSTER42</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/project/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/project/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/project/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/HUSTER42" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HUSTER42" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com" rel="noopener" target="_blank">Title</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://huster42.github.io/project/2025/11/29/KTF%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3%EF%BC%881%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/project/images/science.jpeg">
+      <meta itemprop="name" content="HUSTER42">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HUSTER42's BLOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="KTF文件详解（1） | HUSTER42's BLOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          KTF文件详解（1）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-11-29 20:58:38 / 修改时间：21:22:30" itemprop="dateCreated datePublished" datetime="2025-11-29T20:58:38+08:00">2025-11-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/project/categories/KTF/" itemprop="url" rel="index"><span itemprop="name">KTF</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>ktransformers-main&#x2F;<br>├── 📄 配置文件<br>│   ├── README.md &#x2F; README_ZH.md           # 项目说明文档<br>│   ├── LICENSE                           			# 开源许可证<br>│   ├── pyproject.toml                    			# Python 项目配置<br>│   ├── setup.py                          			    # 安装脚本<br>│   ├── Makefile                          		           # 构建脚本<br>│   ├── config.json                                                  # 主配置文件<br>│   └── requirements-local_chat.txt                        # 依赖文件<br>│<br>├── 📁 ktransformers&#x2F;                     # 🔧 核心 Python 包<br>│   ├── 📁 configs&#x2F;                          # 配置文件目录<br>│   ├── 📁 models&#x2F;                          # 模型定义<br>│   ├── 📁 operators&#x2F;                       # 操作符实现<br>│   ├── 📁 optimize&#x2F;                        # 优化规则<br>│   ├── 📁 server&#x2F;                            # 服务器实现<br>│   ├── 📁 tests&#x2F;                               # 测试文件<br>│   ├── 📁 util&#x2F;                                 # 工具函数<br>│   ├── 📁 website&#x2F;                          # Web 界面<br>│   └── local_chat.py                         # 本地聊天脚本<br><strong>│</strong><br><strong>├── 📁 kt-kernel&#x2F;                            # ⚡ 高性能计算内核</strong><br><strong>│   ├── 📁 operators&#x2F;                      # 底层操作符</strong><br><strong>│   │   ├── 📁 amx&#x2F;                         # AMX 优化</strong><br><strong>│   │   ├── 📁 kml&#x2F;                         # KML 内核</strong><br><strong>│   │   ├── 📁 kvcache&#x2F;                   # KV 缓存</strong><br><strong>│   │   └── 📁 llamafile&#x2F;                  # Llamafile 兼容</strong><br><strong>│   ├── 📁 cuda&#x2F;                              # CUDA 实现</strong><br><strong>│   ├── 📁 cpu_backend&#x2F;                 # CPU 后端</strong><br><strong>│   ├── 📁 bench&#x2F;                             # 性能测试</strong><br><strong>│   └── 📁 examples&#x2F;                        # 示例代码</strong><br>│<br>├── 📁 csrc&#x2F;                                      # 🔨 C++ 源码<br>│   ├── 📁 balance_serve&#x2F;                # 负载均衡服务<br>│   │   ├── 📁 kvc2&#x2F;                         # KV 缓存系统<br>│   │   └── 📁 sched&#x2F;                        # 调度器<br>│   ├── 📁 custom_marlin&#x2F;               # Marlin 量化<br>│   └── 📁 ktransformers_ext&#x2F;          # 扩展模块<br>│<br>├── 📁 doc&#x2F;                                       # 📚 文档<br>│   ├── 📁 en&#x2F;                                   # 英文文档<br>│   ├── 📁 zh&#x2F;                                   # 中文文档<br>│   └── 📁 assets&#x2F;                             # 文档资源<br>│<br>├── 📁 third_party&#x2F;                           # 📦 第三方库<br>│   ├── llama.cpp&#x2F;                              # Llama.cpp<br>│   ├── llamafile&#x2F;                                # Llamafile<br>│   ├── pybind11&#x2F;                               # Python 绑定<br>│   └── nlohmann&#x2F;                              # JSON 库<br>│<br>├── 📁 .github&#x2F;                                  # 🔄 CI&#x2F;CD 配置<br>│   └── 📁 workflows&#x2F;                      # GitHub Actions<br>│<br>└── 📁 merge_tensors&#x2F;                      # 🔀 张量合并工具</p>
+<span id="more"></span>
+<p>NUMA(Non-Uniform Memory Access)，即非一致性内存访问，是一种关于多个CPU如何访问内存的架构模型，调整了CPU和内存的布局和访问关系，具体示意如下图：</p>
+<p><img src="https://pica.zhimg.com/v2-6cf9ff67d03279f251daa30c110a3306_1440w.jpg" alt="img"></p>
+<p>在NUMA架构中，将CPU划分到多个NUMA Node中，每个Node有自己独立的内存空间和PCIE总线系统。各个CPU间通过<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?content_id=231155222&content_type=Article&match_order=1&q=QPI%E6%80%BB%E7%BA%BF&zd_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ6aGlkYV9zZXJ2ZXIiLCJleHAiOjE3NjM4MTA5NjQsInEiOiJRUEnmgLvnur8iLCJ6aGlkYV9zb3VyY2UiOiJlbnRpdHkiLCJjb250ZW50X2lkIjoyMzExNTUyMjIsImNvbnRlbnRfdHlwZSI6IkFydGljbGUiLCJtYXRjaF9vcmRlciI6MSwiemRfdG9rZW4iOm51bGx9.w6ZR9XFZM4IkBX_s5EBp4ktEZKaybm1Z2fic16BOKpY&zhida_source=entity">QPI总线</a>进行互通。</p>
+<p>CPU访问不同类型节点内存的速度是不相同的，访问本地节点的速度最快，访问远端节点的速度最慢，即访问速度与节点的距离有关，距离越远访，问速度越慢，所以叫做非一致性内存访问，这个访问内存的距离我们称作Node Distance。</p>
+<p>虽然NUMA很好的解决了SMP架构下CPU大量扩展带来的性能问题，但是其自身也存在着不足，当Node节点本地内存不足时，需要跨节点访问内存，节点间的访问速度慢，从而也会带来性能的下降。所以我们在编写应用程序时，要充分利用NUMA系统的这个特点，尽量的减少不同CPU模块之间的交互，避免远程访问资源，如果应用程序能有方法固定在一个CPU模块里，那么应用的性能将会有很大的提升。</p>
+<h2 id="构造函数-三种初始化模式"><a href="#构造函数-三种初始化模式" class="headerlink" title="构造函数 - 三种初始化模式"></a>构造函数 - 三种初始化模式</h2><h5 id="基础线程池模式"><a href="#基础线程池模式" class="headerlink" title="基础线程池模式"></a>基础线程池模式</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CPUInfer(int thread_num)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建指定数量的工作线程</li>
+<li>适用于简单的多线程 CPU 计算</li>
+</ul>
+<h5 id="NUMA-感知模式"><a href="#NUMA-感知模式" class="headerlink" title="NUMA 感知模式"></a>NUMA 感知模式</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CPUInfer(int thread_num, int </span><br><span class="line">numa_id)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>绑定到特定的 NUMA 节点</li>
+<li>优化内存访问局部性，提升性能</li>
+</ul>
+<h5 id="高级配置模式"><a href="#高级配置模式" class="headerlink" title="高级配置模式"></a>高级配置模式</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CPUInfer(WorkerPoolConfig config)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>支持复杂的线程池配置</li>
+<li>可配置多个 NUMA 节点和线程分布</li>
+</ul>
+<h2 id="提前转换FP16为FP32"><a href="#提前转换FP16为FP32" class="headerlink" title="提前转换FP16为FP32"></a>提前转换FP16为FP32</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (<span class="number">1</span> &lt;&lt; <span class="number">16</span>); ++i) &#123;</span><br><span class="line"></span><br><span class="line">	ggml_table_f32_f16[i] = <span class="built_in">GGML_COMPUTE_FP16_TO_FP32</span>(i);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>FP16 (半精度浮点数) 只有 16 位，共 65536 个可能值 (0-65535)</p>
+</li>
+<li><p>FP32 (单精度浮点数) 有 32 位，转换需要复杂的位操作</p>
+</li>
+<li><p>在大模型推理中，这种转换会频繁发生</p>
+<h2 id="CPU等待GPU结束后执行"><a href="#CPU等待GPU结束后执行" class="headerlink" title="CPU等待GPU结束后执行"></a>CPU等待GPU结束后执行</h2></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="type">void</span> <span class="title">submit_with_cuda_stream</span><span class="params">(<span class="type">intptr_t</span> user_cuda_stream, std::pair&lt;<span class="type">intptr_t</span>, <span class="type">intptr_t</span>&gt; params)</span> </span>&#123;</span><br><span class="line">\<span class="meta">#<span class="keyword">if</span> defined(KTRANSFORMERS_USE_CUDA)</span></span><br><span class="line">  <span class="built_in">void</span> (*func)(<span class="type">void</span>*) = (<span class="built_in">void</span> (*)(<span class="type">void</span>*))params.first;</span><br><span class="line">  <span class="type">void</span>* args = (<span class="type">void</span>*)params.second;</span><br><span class="line">  *((CPUInfer**)args) = <span class="keyword">this</span>;</span><br><span class="line">  <span class="built_in">cudaLaunchHostFunc</span>((cudaStream_t)user_cuda_stream, (cudaHostFn_t)func, args);</span><br><span class="line">  #将 CPU 函数提交到指定的 CUDA 流中</span><br><span class="line">\<span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p> GPU 任务1 —-&gt; GPU 任务2 —-&gt; GPU 任务3 —-&gt; CPU 回调函数<br>    ↑              ↑              ↑              ↑<br>  CUDA 流中     CUDA 流中     CUDA 流中     GPU完成后执行</p>
+<h2 id="同步函数，等待队列内所有任务完成"><a href="#同步函数，等待队列内所有任务完成" class="headerlink" title="同步函数，等待队列内所有任务完成"></a>同步函数，等待队列内所有任务完成</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">SyncArgs</span> &#123;</span><br><span class="line"> CPUInfer* cpuinfer;</span><br><span class="line"> <span class="type">size_t</span> n;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">sync_</span><span class="params">(<span class="type">void</span>* sync_args)</span> </span>&#123;</span><br><span class="line"> SyncArgs* args = (SyncArgs*)sync_args;</span><br><span class="line"> args-&gt;cpuinfer-&gt;task_queue_-&gt;<span class="built_in">sync</span>(args-&gt;n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sync</span><span class="params">(<span class="type">size_t</span> n = <span class="number">0</span>)</span> </span>&#123;</span><br><span class="line"> SyncArgs* args = <span class="keyword">new</span> SyncArgs&#123;<span class="keyword">this</span>, n&#125;;</span><br><span class="line"> <span class="built_in">sync_</span>(args);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="共享内存缓存区管理"><a href="#共享内存缓存区管理" class="headerlink" title="共享内存缓存区管理"></a>共享内存缓存区管理</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">buffer = std::<span class="built_in">aligned_alloc</span>(<span class="number">64</span>, total_size);</span><br><span class="line"><span class="keyword">if</span> (!buffer) &#123;</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;cannot aligned alloc %ld bytes\n&quot;</span>, total_size);</span><br><span class="line"> <span class="built_in">perror</span>(<span class="string">&quot;aligned_alloc&quot;</span>);  <span class="comment">// errno == ENOMEM/EINVAL</span></span><br><span class="line"> <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>采用64位对齐代码块，可以满足AVX-512和缓存行优化，倘若要两次内存访问跨行，现在只要一次就行。同时对NUMA内存提供了感知函数，可以检测跨节点，日后可以调整优化策略。</p>
+<h2 id="原子操作"><a href="#原子操作" class="headerlink" title="原子操作"></a>原子操作</h2><p>原子操作（Atomic Operation）是指在多线程环境中，一个操作要么完全执行成功，要么完全不执行，不会被其他线程中断。它保证了操作的 不可分割性 和 一致性 。可以避免传统互斥锁的开销：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">TaskQueue::enqueue</span><span class="params">(std::function&lt;<span class="type">void</span>()&gt; task)</span> </span>&#123;</span><br><span class="line">  pending.<span class="built_in">fetch_add</span>(<span class="number">1</span>, std::memory_order_acq_rel);  <span class="comment">// 原子递增</span></span><br><span class="line">  Node* node = <span class="keyword">new</span> <span class="built_in">Node</span>(task);</span><br><span class="line">  Node* prev = tail.<span class="built_in">exchange</span>(node, std::memory_order_acq_rel);  <span class="comment">// 原子交换</span></span><br><span class="line">  prev-&gt;next.<span class="built_in">store</span>(node, std::memory_order_release);  <span class="comment">// 原子存储</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="工作窃取"><a href="#工作窃取" class="headerlink" title="工作窃取"></a>工作窃取</h2><p><strong>工作窃取</strong>是一种调度算法，主要用于多线程和并发编程中。其核心思想是：每个工作线程优先处理本地队列中的任务，当本地队列为空时，它会尝试从其他线程的队列中“窃取”任务来执行。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> block = (rem + worker_count - <span class="number">1</span>) / worker_count;</span><br><span class="line"><span class="type">int</span> task_id = curr_.<span class="built_in">fetch_add</span>(block, std::memory_order_acq_rel);</span><br><span class="line"><span class="keyword">if</span> (task_id &gt;= end_) &#123;</span><br><span class="line"> <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>GEMM（General Matrix Multiplication，通用矩阵乘法）是数值计算领域的核心操作，定义为<strong>矩阵乘法的通用形式</strong>：<br>$$<br>C&#x3D;α⋅A×B+β⋅C<br>$$<br>其中 <em>A</em>（<em>m</em>×<em>k</em>）、<em>B</em>（<em>k</em>×<em>n</em>）、<em>C</em>（<em>m</em>×<em>n</em>）是矩阵，<em>α</em>、<em>β</em> 是标量（通常 <em>α</em>&#x3D;1,<em>β</em>&#x3D;0，即基础矩阵乘法 <em>C</em>&#x3D;<em>A</em>×<em>B</em>）。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/project/tags/NUMA/" rel="tag"># NUMA</a>
+              <a href="/project/tags/%E9%AB%98%E6%80%A7%E8%83%BD%E7%AE%97%E5%AD%90/" rel="tag"># 高性能算子</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/project/2025/11/29/KTF%E9%83%A8%E7%BD%B2/" rel="prev" title="KTF部署">
+                  <i class="fa fa-angle-left"></i> KTF部署
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/project/2025/11/29/KTF%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3%EF%BC%882%EF%BC%89/" rel="next" title="KTF文件详解（2）">
+                  KTF文件详解（2） <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">HUSTER42</span>
+  </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

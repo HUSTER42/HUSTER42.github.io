@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/project/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/project/images/favicon-32x32-next.png">
@@ -17,8 +16,10 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"huster42.github.io","root":"/project/","images":"/project/images","scheme":"Gemini","darkmode":true,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/project/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huster42.github.io","root":"/project/","images":"/project/images","scheme":"Gemini","darkmode":false,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/project/js/config.js" defer></script>
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="HUSTER42&#39;s BLOG">
@@ -46,6 +47,7 @@
 
 
   
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
 <script src="/project/js/utils.js" defer></script><script src="/project/js/motion.js" defer></script><script src="/project/js/sidebar.js" defer></script><script src="/project/js/next-boot.js" defer></script>
 
@@ -54,12 +56,19 @@
 
 
 
+  <script src="/project/js/third-party/pace.js" defer></script>
 
 
   
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/project/js/third-party/math/mathjax.js" defer></script>
 
 
 
@@ -100,7 +109,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/project/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/project/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/project/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/project/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/project/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
   </ul>
 </nav>
 
@@ -130,6 +139,8 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="HUSTER42"
+      src="/project/images/science.jpeg">
   <p class="site-author-name" itemprop="name">HUSTER42</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -137,18 +148,45 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/project/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/project/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/project/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
   </nav>
 </div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/HUSTER42" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HUSTER42" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
 
         </div>
       </div>
     </div>
 
     
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com" rel="noopener" target="_blank">Title</a>
+            </li>
+        </ul>
+      </div>
+    </div>
   </aside>
 
 
@@ -164,10 +202,10 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://huster42.github.io/project/2025/11/28/202511%EF%BC%88KTF)/">
+    <link itemprop="mainEntityOfPage" href="http://huster42.github.io/project/2025/11/29/KTF%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3%EF%BC%882%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/project/images/avatar.gif">
+      <meta itemprop="image" content="/project/images/science.jpeg">
       <meta itemprop="name" content="HUSTER42">
     </span>
 
@@ -182,7 +220,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/project/2025/11/28/202511%EF%BC%88KTF)/" class="post-title-link" itemprop="url">未命名</a>
+          <a href="/project/2025/11/29/KTF%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3%EF%BC%882%EF%BC%89/" class="post-title-link" itemprop="url">KTF文件详解（2）</a>
         </h2>
 
         <div class="post-meta-container">
@@ -194,7 +232,16 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-11-28 21:01:07 / 修改时间：21:23:45" itemprop="dateCreated datePublished" datetime="2025-11-28T21:01:07+08:00">2025-11-28</time>
+      <time title="创建时间：2025-11-29 21:11:08 / 修改时间：21:22:31" itemprop="dateCreated datePublished" datetime="2025-11-29T21:11:08+08:00">2025-11-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/project/categories/KTF/" itemprop="url" rel="index"><span itemprop="name">KTF</span></a>
+        </span>
     </span>
 
   
@@ -207,140 +254,282 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <hr>
-<h2 id="推理引擎初探"><a href="#推理引擎初探" class="headerlink" title="推理引擎初探"></a>推理引擎初探</h2><h1 id="11-月学习总结：KTransformers-探索之路"><a href="#11-月学习总结：KTransformers-探索之路" class="headerlink" title="11 月学习总结：KTransformers 探索之路"></a>11 月学习总结：KTransformers 探索之路</h1><p>这个 11 月，我围绕大语言模型推理优化工具展开了深入学习，重点研究了 KTransformers和 nano vllm 两个项目，从理论原理到部署实践都有了不少收获。以下是这个月的学习路线与总结。</p>
-<h2 id="一、初识-KTransformers：定位与核心优势"><a href="#一、初识-KTransformers：定位与核心优势" class="headerlink" title="一、初识 KTransformers：定位与核心优势"></a>一、初识 KTransformers：定位与核心优势</h2><h3 id="1-1-项目简介"><a href="#1-1-项目简介" class="headerlink" title="1.1 项目简介"></a>1.1 项目简介</h3><p>KTransformers 是由清华大学 KVCache.AI 团队联合趋境科技推出的开源项目，核心目标是<strong>优化大语言模型推理性能、降低硬件门槛</strong>，尤其适配资源受限场景。其设计初衷源于 GPU 算力存储成本过高的问题，希望通过内存、硬盘等低成本设备替代，并更好地适配稀疏矩阵场景。</p>
-<h3 id="1-2-核心优势"><a href="#1-2-核心优势" class="headerlink" title="1.2 核心优势"></a>1.2 核心优势</h3><p>KTransformers 在低显存环境下实现高性能推理的关键特性包括：</p>
+          <h1 id="ktransformers-中-AMX-文件夹详细解析"><a href="#ktransformers-中-AMX-文件夹详细解析" class="headerlink" title="ktransformers 中 AMX 文件夹详细解析"></a>ktransformers 中 AMX 文件夹详细解析</h1><h2 id="1-文件夹结构与整体架构"><a href="#1-文件夹结构与整体架构" class="headerlink" title="1. 文件夹结构与整体架构"></a>1. 文件夹结构与整体架构</h2><p>AMX是Intel CPU上矩阵计算加速的核心实现。整体架构分为三个主要部分：</p>
 <ul>
-<li><strong>以存代算</strong>：利用 K&#x2F;V Cache 存储前缀相同的中间结果，加速相似问题的回答</li>
-<li><strong>MoE 优化</strong>：将稠密的 FFN 矩阵切分为小块，每次仅激活部分稀疏矩阵，支持更多硬件选择</li>
-<li><strong>智能 Offload 策略</strong>：基于算子计算强度优先级分配到 CPU，减少 GPU 参与</li>
-<li><strong>CudaGraph 优化</strong>：将一系列 kernel 打包成计算图，降低 CPU&#x2F;GPU 交互延迟</li>
-<li><strong>AMX 指令利用</strong>：在 CPU 上通过二维寄存器文件（TILE）实现高效矩阵计算，类似 GEMM 优化（传统 SIMD 一次处理几个数据，而 AMX 可直接操作 TILE×TILE 大小的矩阵块）</li>
-</ul>
-<h3 id="1-3-与-vLLM-的定位差异"><a href="#1-3-与-vLLM-的定位差异" class="headerlink" title="1.3 与 vLLM 的定位差异"></a>1.3 与 vLLM 的定位差异</h3><table>
-<thead>
-<tr>
-<th>工具</th>
-<th>核心侧重</th>
-<th>适用场景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>vLLM</td>
-<td>大规模部署</td>
-<td>高资源、高并发场景</td>
-</tr>
-<tr>
-<td>KTransformers</td>
-<td>资源受限环境的本地推理</td>
-<td>个人开发者、小算力场景</td>
-</tr>
-</tbody></table>
-<h2 id="二、KTransformers-核心技术深入"><a href="#二、KTransformers-核心技术深入" class="headerlink" title="二、KTransformers 核心技术深入"></a>二、KTransformers 核心技术深入</h2><h3 id="2-1-架构与基础组件"><a href="#2-1-架构与基础组件" class="headerlink" title="2.1 架构与基础组件"></a>2.1 架构与基础组件</h3><p>KTransformers 的项目结构清晰，核心模块包括：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ktransformers-main/</span><br><span class="line">├── 配置文件（pyproject.toml、config.json等）</span><br><span class="line">├── ktransformers/（核心Python包：模型定义、操作符、优化规则等）</span><br><span class="line">├── kt-kernel/（高性能计算内核：AMX优化、KV缓存、CUDA实现等）</span><br><span class="line">├── csrc/（C++源码：负载均衡、量化、扩展模块）</span><br><span class="line">├── 文档与第三方库（llama.cpp、pybind11等）</span><br></pre></td></tr></table></figure>
+<li><strong>基础头文件</strong>：包括 awq-moe.hpp 和 moe.hpp，实现了混合专家模型（MOE）与AMX的集成</li>
+<li><strong>线性代数实现（la&#x2F;）</strong>：核心数学运算和矩阵加速实现</li>
+<li><strong>测试目录（test&#x2F;）</strong>：功能测试、性能基准测试和正确性验证
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/project/2025/11/29/KTF%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3%EF%BC%882%EF%BC%89/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
-<h3 id="2-2-关键技术原理"><a href="#2-2-关键技术原理" class="headerlink" title="2.2 关键技术原理"></a>2.2 关键技术原理</h3><h4 id="（1）NUMA-架构适配"><a href="#（1）NUMA-架构适配" class="headerlink" title="（1）NUMA 架构适配"></a>（1）NUMA 架构适配</h4><p>NUMA（非一致性内存访问）架构中，CPU 被划分为多个 Node，每个 Node 有独立内存和 PCIE 总线，访问本地内存速度最快，远端节点最慢。KTransformers 通过 NUMA 感知模式优化内存访问：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// NUMA感知模式构造函数</span></span><br><span class="line"><span class="built_in">CPUInfer</span>(<span class="type">int</span> thread_num, <span class="type">int</span> numa_id)</span><br></pre></td></tr></table></figure>
+    
+    
+    
 
-<p>通过绑定线程到特定 NUMA 节点，减少跨节点内存访问，提升性能。</p>
-<h4 id="（2）性能优化细节"><a href="#（2）性能优化细节" class="headerlink" title="（2）性能优化细节"></a>（2）性能优化细节</h4><ul>
-<li><p><strong>提前转换 FP16 为 FP32</strong>：预计算所有可能的 FP16 到 FP32 转换结果（共 65536 个），避免推理时频繁计算：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; (<span class="number">1</span> &lt;&lt; <span class="number">16</span>); ++i) &#123;</span><br><span class="line">    ggml_table_f32_f16[i] = <span class="built_in">GGML_COMPUTE_FP16_TO_FP32</span>(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
 
-</li>
-<li><p><strong>CPU 与 GPU 同步机制</strong>：通过 CUDA 流实现 CPU 等待 GPU 任务完成后执行回调：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">submit_with_cuda_stream</span><span class="params">(<span class="type">intptr_t</span> user_cuda_stream, std::pair&lt;<span class="type">intptr_t</span>, <span class="type">intptr_t</span>&gt; params)</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> defined(KTRANSFORMERS_USE_CUDA)</span></span><br><span class="line">  <span class="comment">// 将CPU函数提交到指定CUDA流</span></span><br><span class="line">  <span class="built_in">cudaLaunchHostFunc</span>((cudaStream_t)user_cuda_stream, (cudaHostFn_t)func, args);</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-</li>
-<li><p><strong>内存优化</strong>：采用 64 位对齐分配内存，适配 AVX-512 和缓存行优化，减少内存访问次数：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">buffer = std::<span class="built_in">aligned_alloc</span>(<span class="number">64</span>, total_size);</span><br></pre></td></tr></table></figure>
+    
 
 
-</li>
-<li><p><strong>并发控制</strong>：通过原子操作保证多线程安全，避免传统互斥锁开销：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pending.<span class="built_in">fetch_add</span>(<span class="number">1</span>, std::memory_order_acq_rel);  <span class="comment">// 原子递增</span></span><br><span class="line">Node* prev = tail.<span class="built_in">exchange</span>(node, std::memory_order_acq_rel);  <span class="comment">// 原子交换</span></span><br></pre></td></tr></table></figure>
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://huster42.github.io/project/2025/11/29/KTF%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3%EF%BC%881%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/project/images/science.jpeg">
+      <meta itemprop="name" content="HUSTER42">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HUSTER42's BLOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | HUSTER42's BLOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/project/2025/11/29/KTF%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3%EF%BC%881%EF%BC%89/" class="post-title-link" itemprop="url">KTF文件详解（1）</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-11-29 20:58:38 / 修改时间：21:22:30" itemprop="dateCreated datePublished" datetime="2025-11-29T20:58:38+08:00">2025-11-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/project/categories/KTF/" itemprop="url" rel="index"><span itemprop="name">KTF</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>ktransformers-main&#x2F;<br>├── 📄 配置文件<br>│   ├── README.md &#x2F; README_ZH.md           # 项目说明文档<br>│   ├── LICENSE                           			# 开源许可证<br>│   ├── pyproject.toml                    			# Python 项目配置<br>│   ├── setup.py                          			    # 安装脚本<br>│   ├── Makefile                          		           # 构建脚本<br>│   ├── config.json                                                  # 主配置文件<br>│   └── requirements-local_chat.txt                        # 依赖文件<br>│<br>├── 📁 ktransformers&#x2F;                     # 🔧 核心 Python 包<br>│   ├── 📁 configs&#x2F;                          # 配置文件目录<br>│   ├── 📁 models&#x2F;                          # 模型定义<br>│   ├── 📁 operators&#x2F;                       # 操作符实现<br>│   ├── 📁 optimize&#x2F;                        # 优化规则<br>│   ├── 📁 server&#x2F;                            # 服务器实现<br>│   ├── 📁 tests&#x2F;                               # 测试文件<br>│   ├── 📁 util&#x2F;                                 # 工具函数<br>│   ├── 📁 website&#x2F;                          # Web 界面<br>│   └── local_chat.py                         # 本地聊天脚本<br><strong>│</strong><br><strong>├── 📁 kt-kernel&#x2F;                            # ⚡ 高性能计算内核</strong><br><strong>│   ├── 📁 operators&#x2F;                      # 底层操作符</strong><br><strong>│   │   ├── 📁 amx&#x2F;                         # AMX 优化</strong><br><strong>│   │   ├── 📁 kml&#x2F;                         # KML 内核</strong><br><strong>│   │   ├── 📁 kvcache&#x2F;                   # KV 缓存</strong><br><strong>│   │   └── 📁 llamafile&#x2F;                  # Llamafile 兼容</strong><br><strong>│   ├── 📁 cuda&#x2F;                              # CUDA 实现</strong><br><strong>│   ├── 📁 cpu_backend&#x2F;                 # CPU 后端</strong><br><strong>│   ├── 📁 bench&#x2F;                             # 性能测试</strong><br><strong>│   └── 📁 examples&#x2F;                        # 示例代码</strong><br>│<br>├── 📁 csrc&#x2F;                                      # 🔨 C++ 源码<br>│   ├── 📁 balance_serve&#x2F;                # 负载均衡服务<br>│   │   ├── 📁 kvc2&#x2F;                         # KV 缓存系统<br>│   │   └── 📁 sched&#x2F;                        # 调度器<br>│   ├── 📁 custom_marlin&#x2F;               # Marlin 量化<br>│   └── 📁 ktransformers_ext&#x2F;          # 扩展模块<br>│<br>├── 📁 doc&#x2F;                                       # 📚 文档<br>│   ├── 📁 en&#x2F;                                   # 英文文档<br>│   ├── 📁 zh&#x2F;                                   # 中文文档<br>│   └── 📁 assets&#x2F;                             # 文档资源<br>│<br>├── 📁 third_party&#x2F;                           # 📦 第三方库<br>│   ├── llama.cpp&#x2F;                              # Llama.cpp<br>│   ├── llamafile&#x2F;                                # Llamafile<br>│   ├── pybind11&#x2F;                               # Python 绑定<br>│   └── nlohmann&#x2F;                              # JSON 库<br>│<br>├── 📁 .github&#x2F;                                  # 🔄 CI&#x2F;CD 配置<br>│   └── 📁 workflows&#x2F;                      # GitHub Actions<br>│<br>└── 📁 merge_tensors&#x2F;                      # 🔀 张量合并工具</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/project/2025/11/29/KTF%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3%EF%BC%881%EF%BC%89/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
 
-</li>
-<li><p><strong>工作窃取调度</strong>：线程本地队列空时，从其他线程队列窃取任务，提高 CPU 利用率：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> block = (rem + worker_count - <span class="number">1</span>) / worker_count;</span><br><span class="line"><span class="type">int</span> task_id = curr_.<span class="built_in">fetch_add</span>(block, std::memory_order_acq_rel);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="2-3-双阶段推理机制"><a href="#2-3-双阶段推理机制" class="headerlink" title="2.3 双阶段推理机制"></a>2.3 双阶段推理机制</h3><p>KTransformers 的双阶段推理是提升性能的核心策略，将推理分为预填充（Prefill）和生成（Generate）两个阶段，针对性优化。</p>
-<h4 id="（1）预填充阶段（Prefill）"><a href="#（1）预填充阶段（Prefill）" class="headerlink" title="（1）预填充阶段（Prefill）"></a>（1）预填充阶段（Prefill）</h4><p>处理用户输入提示词，计算并缓存中间状态，支持长序列分块处理：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">chunk_prefill</span>(<span class="params">inputs, cache_position, past_key_values</span>):</span><br><span class="line">    <span class="comment"># 获取输入嵌入</span></span><br><span class="line">    inputs_embeds = model.model.embed_tokens(inputs.to(<span class="string">&quot;cpu&quot;</span>)).to(torch_device)</span><br><span class="line">    <span class="comment"># 模型前向计算，标记为prefill阶段</span></span><br><span class="line">    ret = model(</span><br><span class="line">        inputs_embeds = inputs_embeds, </span><br><span class="line">        cache_position=cache_position, </span><br><span class="line">        past_key_values=past_key_values, </span><br><span class="line">        return_dict=<span class="literal">False</span>, </span><br><span class="line">        use_cache=<span class="literal">True</span>, </span><br><span class="line">        is_prefill=<span class="literal">True</span></span><br><span class="line">    )</span><br><span class="line">    logits = ret[<span class="number">0</span>][:,-<span class="number">1</span>,:].unsqueeze(<span class="number">0</span>).clone().to(torch_device)</span><br><span class="line">    <span class="keyword">return</span> logits</span><br></pre></td></tr></table></figure>
-
-<p>分块处理逻辑：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">chunk_start = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> chunk_start &lt; seq_length:</span><br><span class="line">    chunk_end = <span class="built_in">min</span>(chunk_start + chunk_size, seq_length)</span><br><span class="line">    <span class="keyword">if</span> past_key_values != <span class="literal">None</span>:</span><br><span class="line">        past_key_values.cur_idx = cache_position[chunk_start:chunk_end]</span><br><span class="line">    logits = chunk_prefill(inputs[:, chunk_start:chunk_end], cache_position[chunk_start:chunk_end], past_key_values)</span><br><span class="line">    chunk_start += chunk_size</span><br></pre></td></tr></table></figure>
-
-<h4 id="（2）生成阶段（Generate）"><a href="#（2）生成阶段（Generate）" class="headerlink" title="（2）生成阶段（Generate）"></a>（2）生成阶段（Generate）</h4><p>基于预填充的缓存，逐个生成输出 token，复用 KV 缓存避免重复计算：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decode_one_tokens</span>(<span class="params">cuda_graph_runner, cur_token, position_ids, cache_position, past_key_values, logits_warper, generation_config, use_cuda_graph=<span class="literal">True</span></span>):</span><br><span class="line">    <span class="comment"># 根据设备选择实现</span></span><br><span class="line">    <span class="keyword">if</span> use_torch_npu:</span><br><span class="line">        <span class="keyword">return</span> decode_one_tokens_npu(...)</span><br><span class="line">    <span class="comment"># 推理计算</span></span><br><span class="line">    <span class="keyword">if</span> use_cuda_graph:</span><br><span class="line">        logits = cuda_graph_runner(cur_token, position_ids, cache_position)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        inputs_embeds = model.model.embed_tokens(cur_token.to(<span class="string">&quot;cpu&quot;</span>)).to(torch_device)</span><br><span class="line">        logits = model(inputs_embeds=inputs_embeds, ...)[<span class="number">0</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 生成下一个token</span></span><br><span class="line">    next_token_scores = logits_warper(inputs, logits[:, -<span class="number">1</span>, :])</span><br><span class="line">    <span class="keyword">if</span> generation_config.do_sample:</span><br><span class="line">        probs = nn.functional.softmax(next_token_scores, dim=-<span class="number">1</span>)</span><br><span class="line">        next_token = torch.multinomial(probs, num_samples=<span class="number">1</span>).squeeze(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        next_token = torch.argmax(next_token_scores, dim=-<span class="number">1</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> next_token</span><br></pre></td></tr></table></figure>
-
-<h4 id="（3）关键优化技术"><a href="#（3）关键优化技术" class="headerlink" title="（3）关键优化技术"></a>（3）关键优化技术</h4><ul>
-<li><p><strong>静态缓存管理</strong>：通过<code>StaticCache</code>类高效管理 KV 缓存：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">past_key_values = StaticCache(</span><br><span class="line">    config=model.config, </span><br><span class="line">    max_batch_size=<span class="number">1</span>, </span><br><span class="line">    max_cache_len=seq_length + max_new_tokens, </span><br><span class="line">    device=device_map, </span><br><span class="line">    dtype=model.dtype</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>CUDA&#x2F;NPU Graph 优化</strong>：捕获计算图复用，减少 CPU-GPU 通信开销：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cuda_graph_runner = CUDAGraphRunner()</span><br><span class="line">cuda_graph_runner.capture(model, next_token.unsqueeze(<span class="number">0</span>), position_ids, cache_position, past_key_values, torch_device, return_dict=<span class="literal">False</span>, use_cache=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 
 
-</li>
-<li><p><strong>设备特定优化</strong>：针对 CUDA（FlashAttention、Triton）、XPU（ipex_llm）、NPU（定制内存格式）提供适配实现。</p>
-</li>
-<li><p><strong>FlashInfer 和 MLA 支持</strong>：集成内存布局感知优化，提升注意力计算效率。</p>
-</li>
-</ul>
-<h2 id="三、部署实践：问题与解决方案"><a href="#三、部署实践：问题与解决方案" class="headerlink" title="三、部署实践：问题与解决方案"></a>三、部署实践：问题与解决方案</h2><h3 id="3-1-KTransformers-部署挑战"><a href="#3-1-KTransformers-部署挑战" class="headerlink" title="3.1 KTransformers 部署挑战"></a>3.1 KTransformers 部署挑战</h3><h4 id="（1）环境兼容性问题"><a href="#（1）环境兼容性问题" class="headerlink" title="（1）环境兼容性问题"></a>（1）环境兼容性问题</h4><ul>
-<li><strong>CUDA 与 PyTorch 版本不一致</strong>：服务器 CUDA 版本为 13.0，与部分依赖冲突，最终通过在本地环境安装 CUDA 12.8 解决。</li>
-<li><strong>flash-attn 安装失败</strong>：编译超时，转而尝试 wheel 包，但存在 ABI 兼容性问题（PyTorch 与扩展的 ABI 选项不一致），需匹配对应版本。</li>
-</ul>
-<h4 id="（2）glibc-库版本问题"><a href="#（2）glibc-库版本问题" class="headerlink" title="（2）glibc 库版本问题"></a>（2）glibc 库版本问题</h4><p>部分 flash-attn 版本依赖高版本 glibc（如 3.32），而环境中版本不足，尝试编译 glibc-2.32 时遇到编译错误：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">../sysdeps/nptl/pthread.h:734:47: error: argument 1 of type &#x27;struct __jmp_buf_tag *&#x27; declared as a pointer [-Werror=array-parameter=]</span><br></pre></td></tr></table></figure>
-
-<p>解决方案：通过调整编译参数忽略特定警告：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make CFLAGS=<span class="string">&quot;-Wno-error=cpp -O2 -Wno-array-parameter -Wno-stringop-overflow -Wno-error=inline&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-nano-vllm-部署实践"><a href="#3-2-nano-vllm-部署实践" class="headerlink" title="3.2 nano vllm 部署实践"></a>3.2 nano vllm 部署实践</h3><h4 id="（1）环境配置"><a href="#（1）环境配置" class="headerlink" title="（1）环境配置"></a>（1）环境配置</h4><p>最终适配的环境如下：</p>
-<table>
-<thead>
-<tr>
-<th>组件</th>
-<th>版本信息</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Python</td>
-<td>3.10</td>
-</tr>
-<tr>
-<td>PyTorch</td>
-<td>2.8.0 + cu128</td>
-</tr>
-<tr>
-<td>终端工具</td>
-<td>Windows 本地</td>
-</tr>
-</tbody></table>
-<h4 id="（2）关键问题解决"><a href="#（2）关键问题解决" class="headerlink" title="（2）关键问题解决"></a>（2）关键问题解决</h4><ul>
-<li><p><strong>triton 包支持</strong>：Windows 不支持官方 triton，采用社区版本：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U <span class="string">&quot;triton-windows&lt;3.5&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>flash-attn 安装</strong>：官方无 Windows 版本，使用社区适配的 wheel 包：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载社区适配的Windows版本</span></span><br><span class="line">pip install https://github.com/kingbri1/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu128torch2.8.0cxx11abiFALSE-cp310-cp310-win_amd64.whl</span><br></pre></td></tr></table></figure>
+    
 
 
-</li>
-<li><p><strong>NCCL 不支持 Windows</strong>：NCCL 是 NVIDIA 的 GPU 通信库，Windows 不支持，通过修改代码使用 Gloo 替代，并采用单 GPU 模式避免分布式通信：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将分布式后端从nccl改为gloo</span></span><br><span class="line"><span class="comment"># nano-vllm-main\nanovllm\engine\model_runner.py</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="四、FlashAttention-算子深入理解"><a href="#四、FlashAttention-算子深入理解" class="headerlink" title="四、FlashAttention 算子深入理解"></a>四、FlashAttention 算子深入理解</h2><p>在部署过程中，我深入学习了 FlashAttention 的原理，它是 Transformer 注意力计算的关键优化技术：</p>
-<p>传统 self-attention 的时间和内存复杂度是序列长度的二次方，长序列时性能低下。FlashAttention 通过<strong>减少 HBM 访问</strong>优化：将 QKV 切分为小块放入 SRAM，在 GPU 的 SRAM 中融合多个操作（矩阵乘法、softmax、加权求和等），大幅提升效率。</p>
-<p><img src="C:\Users\xsjch\AppData\Roaming\Typora\typora-user-images\image-20251128212320042.png" alt="image-20251128212320042"></p>
-<h2 id="五、总结与收获"><a href="#五、总结与收获" class="headerlink" title="五、总结与收获"></a>五、总结与收获</h2><p>这个月的学习围绕大语言模型推理优化展开，从 KTransformers 的核心技术（NUMA 适配、双阶段推理、内存与并发优化）到实际部署中的环境兼容问题，再到 nano vllm 的部署实践，逐步深入。</p>
-<p>最大的收获是理解了推理优化的核心思路：<strong>通过软硬件协同（如 AMX 指令、CUDA Graph）、计算流程优化（双阶段推理）、内存管理（KV Cache、对齐分配）等多维度手段，在有限资源下提升模型性能</strong>。同时，也积累了处理环境依赖冲突的经验，为后续更深入的大模型部署与优化打下了基础。</p>
+<div class="post-block">
+  
+  
 
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://huster42.github.io/project/2025/11/29/KTF%E9%83%A8%E7%BD%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/project/images/science.jpeg">
+      <meta itemprop="name" content="HUSTER42">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HUSTER42's BLOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | HUSTER42's BLOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/project/2025/11/29/KTF%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">KTF部署</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-11-29 20:56:47 / 修改时间：21:22:26" itemprop="dateCreated datePublished" datetime="2025-11-29T20:56:47+08:00">2025-11-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/project/categories/KTF/" itemprop="url" rel="index"><span itemprop="name">KTF</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="KTF"><a href="#KTF" class="headerlink" title="KTF"></a>KTF</h1><p>有关KTF的部署有以下几个问题：</p>
+<p>首先是在服务器上安装显示cuda版本与pytorch版本不一致，无法编译，当前服务器版本为13.0。（尝试在虚拟机上，发现目前VMware显卡直连教程较少，只有虚拟显卡）</p>
+<p>重新安装了cuda12.8在自己的环境上，下载了Qwen3-0.6B的模型以及分词文件</p>
+<p>缺失flash-attn，于是尝试编译，编译超时，转而下载wheel。</p>
+<p>尝试了四个版本</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/project/2025/11/29/KTF%E9%83%A8%E7%BD%B2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://huster42.github.io/project/2025/11/29/KTF%E5%88%9D%E6%8E%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/project/images/science.jpeg">
+      <meta itemprop="name" content="HUSTER42">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HUSTER42's BLOG">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | HUSTER42's BLOG">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/project/2025/11/29/KTF%E5%88%9D%E6%8E%A2/" class="post-title-link" itemprop="url">KTF初探</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-11-29 20:49:21 / 修改时间：21:22:25" itemprop="dateCreated datePublished" datetime="2025-11-29T20:49:21+08:00">2025-11-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/project/categories/KTF/" itemprop="url" rel="index"><span itemprop="name">KTF</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="KTF-nano-vllm"><a href="#KTF-nano-vllm" class="headerlink" title="KTF &amp; nano vllm"></a>KTF &amp; nano vllm</h1><hr>
+<h2 id="一、KTransformers（简称-KTF）"><a href="#一、KTransformers（简称-KTF）" class="headerlink" title="一、KTransformers（简称 KTF）"></a>一、KTransformers（简称 KTF）</h2><h4 id="1-1-项目简介"><a href="#1-1-项目简介" class="headerlink" title="1.1 项目简介"></a>1.1 项目简介</h4><p>KTransformers 是由清华大学 KVCache.AI 团队联合趋境科技推出的开源项目，核心目标是<strong>优化大语言模型推理性能、降低硬件门槛</strong>，尤其适配资源受限场景。优化的初衷是GPU算力存储的成本过高，希望能够使用内存，硬盘等成本低容量大带宽低的设备进行代替，并且更加符合稀疏矩阵的场景。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/project/2025/11/29/KTF%E5%88%9D%E6%8E%A2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
